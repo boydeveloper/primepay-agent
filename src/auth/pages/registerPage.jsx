@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function RegisterPage() {
   return (
     <div className="bg-gray-100 min-h-screen py-[30px] w-full flex items-center justify-center px-5">
@@ -152,8 +154,18 @@ function RegisterPage() {
             type="submit"
             className="flex w-full justify-center mt-3 rounded-md bg-[#003569] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#1a4978] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
-            Sign in
+            Regiter
           </button>
+          <div className="text-center">
+            Don’t have an account?{" "}
+            <Link
+              className="font-medium text-indigo-500 underline hover:text-indigo-600"
+              style={{ color: "#003569" }}
+              to="/"
+            >
+              Login
+            </Link>
+          </div>
         </form>
       </div>
     </div>

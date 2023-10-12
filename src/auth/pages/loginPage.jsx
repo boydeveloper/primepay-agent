@@ -1,12 +1,14 @@
 import { useState } from "react";
 
 import Sidebar from "../../dashboard/components/Sidebar";
+import { Link, useNavigate } from "react-router-dom";
 
 function LoginPage() {
   const [formValues, setFormValues] = useState({
     email: "",
     password: "",
   });
+  const navigate = useNavigate();
   return (
     <>
       <div className="bg-gray-100 h-screen w-full flex items-center justify-center px-5">
@@ -18,12 +20,12 @@ function LoginPage() {
                 src="/assets/images/logo.png"
                 alt="primepay logo"
               />
-              <h1 className="text-center leading-9 text-[22px] text-[#003569] font-[600] my-2">
+              <h1 className="text-center leading-9  text-[20px] text-[#003569] font-[600] my-1">
                 Sign in to your account
               </h1>
             </div>
 
-            <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+            <div className="mt-6 sm:mx-auto sm:w-full sm:max-w-sm">
               <form
                 className="flex flex-col gap-[30px]"
                 action="#"
@@ -59,7 +61,7 @@ function LoginPage() {
                     <div className="text-sm">
                       <a
                         href="#"
-                        className="font-semibold text-[#00305f] hover:text-[#002a54]"
+                        className="font-semibold text-[#00305f] underline hover:text-[#002a54]"
                       >
                         Forgot password?
                       </a>
@@ -78,11 +80,23 @@ function LoginPage() {
                 </div>
 
                 <button
-                  type="submit"
+                  type="button"
+                  onClick={() => navigate("/dashboard/overview")}
                   className="flex w-full justify-center rounded-md bg-[#003569] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#1a4978] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
-                  Sign in
+                  Login
                 </button>
+
+                <div className="text-center">
+                  Don’t have an account?{" "}
+                  <Link
+                    className="font-medium text-indigo-500 underline hover:text-indigo-600"
+                    style={{ color: "#003569" }}
+                    to="/register"
+                  >
+                    Register
+                  </Link>
+                </div>
               </form>
             </div>
           </div>

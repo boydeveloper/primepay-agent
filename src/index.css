@@ -13,3 +13,9 @@ body {
   font-weight: 400;
   color: #212529;
 }
+#root {
+  height: 100vh;
+}
+.active {
+  background-color: rgb(75 85 99);
+}
